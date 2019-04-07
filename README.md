@@ -25,6 +25,7 @@ This driver is known to work with these printers:
 
 It partially works with these printers:
 
+* Brother DCP-L2500D series (no 1200dpi)
 * Brother HL-L2300D series
 
 

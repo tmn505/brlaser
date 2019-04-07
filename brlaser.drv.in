@@ -34,12 +34,12 @@ Filter application/vnd.cups-raster 33 rastertobrlaser
 // Supported resolutions.
 // The 1200dpi mode is weird: we need to send 1200x1200dpi raster
 // data, but Brother only advertises 1200x600dpi. I wonder what
-// is going on there.
+// is going on there. Might not work properly on every printer.
 // The 300dpi mode is reportedly not supported on all printers, so
 // it's listed in individual printer blocks where we believe it works.
 // Resolution k 1 0 0 0 "300dpi/300 DPI"
+// Resolution k 1 0 0 0 "1200dpi/1200HQ"
 *Resolution k 1 0 0 0 "600dpi/600 DPI"
-Resolution k 1 0 0 0 "1200dpi/1200HQ"
 
 // Supported page sizes.
 HWMargins 8 8 8 16
@@ -84,6 +84,7 @@ Option "brlaserEconomode/Toner save mode" Boolean AnySetup 10
   Attribute "NickName" "" "Brother DCP-1510 series, $USING"
   Attribute "1284DeviceID" "" "MFG:Brother;CMD:PJL,XL2HB;MDL:DCP-1510 series;CLS:PRINTER;CID:Brother Laser Type1;"
   Resolution k 1 0 0 0 "300dpi/300 DPI"
+  Resolution k 1 0 0 0 "1200dpi/1200HQ"
   PCFileName "br1510.ppd"
 }
 
@@ -92,6 +93,7 @@ Option "brlaserEconomode/Toner save mode" Boolean AnySetup 10
   Attribute "NickName" "" "Brother DCP-7030, $USING"
   Attribute "1284DeviceID" "" "MFG:Brother;CMD:PJL,HBP;MDL:DCP-7030;CLS:PRINTER;"
   Resolution k 1 0 0 0 "300dpi/300 DPI"
+  Resolution k 1 0 0 0 "1200dpi/1200HQ"
   PCFileName "br7030.ppd"
 }
 
@@ -100,6 +102,7 @@ Option "brlaserEconomode/Toner save mode" Boolean AnySetup 10
   Attribute "NickName" "" "Brother DCP-7040, $USING"
   Attribute "1284DeviceID" "" "MFG:Brother;CMD:PJL,HBP;MDL:DCP-7040;CLS:PRINTER;"
   Resolution k 1 0 0 0 "300dpi/300 DPI"
+  Resolution k 1 0 0 0 "1200dpi/1200HQ"
   PCFileName "br7040.ppd"
 }
 
@@ -108,6 +111,7 @@ Option "brlaserEconomode/Toner save mode" Boolean AnySetup 10
   Attribute "NickName" "" "Brother DCP-7055, $USING"
   Attribute "1284DeviceID" "" "MFG:Brother;CMD:PJL,HBP;MDL:DCP-7055;CLS:PRINTER;CID:Brother Laser Type1;"
   Resolution k 1 0 0 0 "300dpi/300 DPI"
+  Resolution k 1 0 0 0 "1200dpi/1200HQ"
   PCFileName "br7055.ppd"
 }
 
@@ -116,6 +120,7 @@ Option "brlaserEconomode/Toner save mode" Boolean AnySetup 10
   Attribute "NickName" "" "Brother DCP-7055W, $USING"
   Attribute "1284DeviceID" "" "MFG:Brother;CMD:PJL,HBP;MDL:DCP-7055W;CLS:PRINTER;CID:Brother Laser Type1;"
   Resolution k 1 0 0 0 "300dpi/300 DPI"
+  Resolution k 1 0 0 0 "1200dpi/1200HQ"
   PCFileName "br7055w.ppd"
 }
 
@@ -123,6 +128,7 @@ Option "brlaserEconomode/Toner save mode" Boolean AnySetup 10
   ModelName "DCP-7065DN"
   Attribute "NickName" "" "Brother DCP-7065DN, $USING"
   Attribute "1284DeviceID" "" "MFG:Brother;CMD:PJL,HBP;MDL:DCP-7065DN;CLS:PRINTER;CID:Brother Laser Type1;"
+  Resolution k 1 0 0 0 "1200dpi/1200HQ"
   Duplex rotated
   PCFileName "br7065dn.ppd"
 }
@@ -131,6 +137,7 @@ Option "brlaserEconomode/Toner save mode" Boolean AnySetup 10
   ModelName "DCP-7080"
   Attribute "NickName" "" "Brother DCP-7080, $USING"
   Attribute "1284DeviceID" "" "MFG:Brother;CMD:PJL,HBP;MDL:DCP-7080;CLS:PRINTER;CID:Brother Laser Type1;"
+  Resolution k 1 0 0 0 "1200dpi/1200HQ"
   PCFileName "br7080.ppd"
 }
 
@@ -138,14 +145,25 @@ Option "brlaserEconomode/Toner save mode" Boolean AnySetup 10
   ModelName "DCP-7080D"
   Attribute "NickName" "" "Brother DCP-7080D, $USING"
   Attribute "1284DeviceID" "" "MFG:Brother;CMD:PJL,HBP;MDL:DCP-7080D;CLS:PRINTER;CID:Brother Laser Type1;"
+  Resolution k 1 0 0 0 "1200dpi/1200HQ"
   Duplex rotated
   PCFileName "br7080d.ppd"
+}
+
+{
+  ModelName "DCP-L2500D"
+  Attribute "NickName" "" "Brother DCP-L2500D series, $USING"
+  Attribute "1284DeviceID" "" "MFG:Brother;CMD:PJL,HBP;MDL:DCP-L2500D series;CLS:PRINTER;CID:Brother Laser Type1;"
+  Resolution k 1 0 0 0 "300dpi/300 DPI"
+  Duplex rotated
+  PCFileName "brl2500d.ppd"
 }
 
 {
   ModelName "HL-1200"
   Attribute "NickName" "" "Brother HL-1200 series, $USING"
   Attribute "1284DeviceID" "" "MFG:Brother;CMD:PJL,HBP;MDL:HL-1200 series;CLS:PRINTER;CID:Brother Laser Type3;"
+  Resolution k 1 0 0 0 "1200dpi/1200HQ"
   PCFileName "br1200.ppd"
 }
 
@@ -153,6 +171,7 @@ Option "brlaserEconomode/Toner save mode" Boolean AnySetup 10
   ModelName "HL-L2300D"
   Attribute "NickName" "" "Brother HL-L2300D series, $USING"
   Attribute "1284DeviceID" "" "MFG:Brother;CMD:PJL,HBP;MDL:HL-L2300D series;CLS:PRINTER;CID:Brother Laser Type1;"
+  Resolution k 1 0 0 0 "1200dpi/1200HQ"
   Duplex rotated
   PCFileName "brl2300d.ppd"
 }
@@ -161,6 +180,7 @@ Option "brlaserEconomode/Toner save mode" Boolean AnySetup 10
   ModelName "HL-L2320D"
   Attribute "NickName" "" "Brother HL-L2320D series, $USING"
   Attribute "1284DeviceID" "" "MFG:Brother;CMD:PJL,HBP;MDL:HL-L2320D series;CLS:PRINTER;CID:Brother Laser Type1;"
+  Resolution k 1 0 0 0 "1200dpi/1200HQ"
   Duplex rotated
   PCFileName "brl2320d.ppd"
 }
@@ -169,6 +189,7 @@ Option "brlaserEconomode/Toner save mode" Boolean AnySetup 10
   ModelName "HL-L2360D"
   Attribute "NickName" "" "Brother HL-L2360D series, $USING"
   Attribute "1284DeviceID" "" "MFG:Brother;CMD:PJL,PCL,PCLXL,URF;MDL:HL-L2360D series;CLS:PRINTER;CID:Brother Laser Type1;URF:W8,CP1,IS4-1,MT1-3-4-5-8,OB10,PQ4,RS300-600,V1.3,DM1;"
+  Resolution k 1 0 0 0 "1200dpi/1200HQ"
   Duplex rotated
   PCFileName "brl2360d.ppd"
 }
@@ -177,6 +198,7 @@ Option "brlaserEconomode/Toner save mode" Boolean AnySetup 10
   ModelName "MFC-7240"
   Attribute "NickName" "" "Brother MFC-7240, $USING"
   Attribute "1284DeviceID" "" "MFG:Brother;MFG:Brother;CMD:PJL,HBP;MDL:MFC-7240;CLS:PRINTER;CID:Brother Laser Type1;"
+  Resolution k 1 0 0 0 "1200dpi/1200HQ"
   PCFileName "br7240.ppd"
 }
 
@@ -184,5 +206,6 @@ Option "brlaserEconomode/Toner save mode" Boolean AnySetup 10
   ModelName "MFC-7360N"
   Attribute "NickName" "" "Brother MFC-7360N, $USING"
   Attribute "1284DeviceID" "" "MFG:Brother;CMD:PJL,HBP;MDL:MFC-7360N;CLS:PRINTER;CID:Brother Laser Type1;"
+  Resolution k 1 0 0 0 "1200dpi/1200HQ"
   PCFileName "br7360n.ppd"
 }
